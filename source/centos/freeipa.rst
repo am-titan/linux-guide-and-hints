@@ -159,7 +159,7 @@ On the replica, ensure you repeat the same steps as above.
    10.200.0.231 server2.ipa.example.com
    
    % yum install ipa-server ipa-server-dns ipa-client sssd sssd-ipa -y
-   % firewall-cmd --permanent --add-service={ntp,http,https,freeipa-ldap,freeipa-ldaps,kerberos,freeipa-replication,kpasswd,dns}
+   % firewall-cmd --permanent --add-port={80/tcp,443/tcp,389/tcp,636/tcp,88/tcp,464/tcp,53/tcp,88/udp,464/udp,53/udp,123/udp}
    % firewall-cmd --complete-reload
    % ipa-replica-install --no-forwarders --setup-ca --setup-dns --no-ntp --principal admin --admin-password "ChangePass123" --domain ipa.example.com
    . . . (show steps)
